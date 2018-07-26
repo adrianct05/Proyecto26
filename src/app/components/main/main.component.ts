@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   @Input() cadena: string;
-  rgb: object;
+  rgb: string;
+
 
   constructor() { }
 
@@ -19,7 +20,8 @@ export class MainComponent implements OnInit {
     const segundo = Math.floor(Math.random() * 100);
     const tercero = Math.floor(Math.random() * 100);
 
-    return String(`rgb(${primero},${segundo},${tercero})`);
+    this.rgb = String(`rgb(${primero},${segundo},${tercero})`);
+    return this.rgb;
   }
 
 }
